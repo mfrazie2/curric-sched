@@ -1,0 +1,44 @@
+<doctype! html>
+<html >
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+</head>
+  <body ng-app="curric-sched">
+    <h1> CurricSched </h1>
+      <h6> Pronounced Just As You Think </h6>
+        <div ng-controller="StudentController">
+        <ul>
+          <li>Day 1</li>
+          <li>Day 3</li>
+          <li>Day 5</li>
+        </ul>
+        
+        <h2> This Week </h2>
+        <p> {{ goal }} </p>
+        
+        <div ng-repeat='day in week.sprints'>
+          <h3> Day# {{ day.day}} </h3>
+          <div ng-repeat='lesson in day.lessons'>
+            <h4> Tech: {{ lesson.tech }} </h4>
+            <p> Project: {{ lesson.project }} </p>
+            <p> Description </p>
+            <p> {{ lesson.description }} </p>
+            
+            <h3> Your Tasks </h3>
+          <ul>  
+          <div ng-repeat='task in lesson.tasks'>
+            <li>
+              <input type='checkbox' ng-model='task.done'/>
+              <span>{{ task.text }}</span>
+            </li>
+          </div>
+          </ul>
+          
+          
+          </div>
+        </div>
+        </div>
+        <script src="app/app.js"></script>
+
+  </body>
+</html>
