@@ -1,93 +1,315 @@
 angular.module('curric-sched', [])
 .controller('StudentController', ['$scope', function($scope) {
-  $scope.goal = "Ugg, my heart just pooped its pants. I texted back a smiley face. She texted back some letters I don't understand. It's not meant to be hilarious. I need both ears to hold up my glasses. I'm not spooked. What's the next thing after spooked?";
-  $scope.week = { 
-    sprints: [
+  $scope.week = {
+    value: 9,
+    weeklyGoal: 'Stoichiometry: Calculating the Chemical World',
+    days: [
+      {
+        dayNumber: 1,
+        dailyGoal: 'Introduction to Stoichiometry',
+        tasks: [
+          {
+            text: "Grade self-assessment",
+            complete: false
+          },
+          {
+            text: "Review questions from last week",
+            complete: false
+          },
+          {
+            text: "Introduction to Stoichiometry",
+            complete: false
+          }   
+        ],
+        assignments: [
+          {
+              text: "Page 333: #1-25 odds",
+              complete: false
+            },
+            {
+              text: "Submit questions for review",
+              complete: false
+            },
+            {
+              text: "Read over lab procedure for Wednesday",
+              complete: false
+            } 
+        ]
+      },
+      {
+        dayNumber: 2,
+        dailyGoal: 'Converting mass to moles and back again (an atom\'s tale)',
+        tasks: [{
+            text: "Check homework",
+            complete: false
+          },
+          {
+            text: "Answer questions from homework",
+            complete: false
+          },
+          {
+            text: "Converting between Mass and Moles",
+            complete: false
+          }],
+        assignments: [{
+              text: "Page 333: #27-35 odds",
+              complete: false
+            },
+            {
+              text: "Submit questions for review",
+              complete: false
+            },
+            {
+              text: "Complete prelab assignment",
+              complete: false
+            },
+            {
+              text: "Bring proper lab attire",
+              complete: false
+            }]
+      },
+      {
+        dayNumber: 3,
+        dailyGoal: 'Stoichiometry Lab: Moles in Chalk',
+        tasks: [{
+            text: "Check prelab and attire",
+            complete: false
+          },
+          {
+            text: "Conduct the experiment",
+            complete: false
+          }],
+        assignments: [{
+              text: "Page 333: #27-35 odds",
+              complete: false
+            },
+            {
+              text: "Submit questions for review",
+              complete: false
+            },
+            {
+              text: "Complete lab write-up for Friday",
+              complete: false
+            }]
+      },
+      {
+        dayNumber: 4,
+        dailyGoal: 'Converting between Moles and Molecules',
+        tasks: [{
+            text: "Check homework",
+            complete: false
+          },
+          {
+            text: "Answer questions from homework",
+            complete: false
+          },
+          {
+            text: "Converting between Moles and Molecules",
+            complete: false
+          }],
+        assignments: [{
+              text: "Page 334: #45 - 65 odds",
+              complete: false
+            },
+            {
+              text: "Submit questions for review",
+              complete: false
+            },
+            {
+              text: "Complete lab write-up for Friday",
+              complete: false
+            }]
+      },
+      {
+        dayNumber: 5,
+        dailyGoal: 'Converting between Mass and Molecules',
+        tasks: [{
+            text: "Check homework",
+            complete: false
+          },
+          {
+            text: "Answer questions from homework",
+            complete: false
+          },
+          {
+            text: "Converting between Mass and Molecules",
+            complete: false
+          }],
+        assignments: [{
+              text: "Page 334: #67 - 81 odds",
+              complete: false
+            },
+            {
+              text: "Read section 10.5: Limiting and Excess Reactants",
+              complete: false
+            },
+            {
+              text: "Submit questions for review",
+              complete: false
+            },
+            {
+              text: "Quiz on Monday: Converting between Mass and Molecules (and Everything in Between)",
+              complete: false
+            }]
+      }
+    
+    ]
+  };
+
+}]);
+
+week : {
+  value: 9,
+  weeklyGoal: 'Stoichiometry: Calculating the Chemical World',
+  days: [
     {
-      day: 1, 
-      lessons: [
+      dayNumber: 1,
+      dailyGoal: 'Introduction to Stoichiometry',
+      tasks: [
         {
-          tech: 'Angular',
-          project: 'Shortly',
-          description: 'Everything I know to be true just went out the window. If we see any mermaids, I\'m gonna ask them where their merginas are. Hey Jimmy Jr. Did you see those two squirrels fighting in the courtyard? Butts. Thank you zombie boyfriends.',
-          tasks: [
-            {
-              text: 'Read the docs',
-              done: false
-            },
-            {
-              text: 'Read the docs',
-              done: false
-            },
-            {
-              text: 'Read the docs',
-              done: false
-            },
-            {
-              text: 'Basic requirements',
-              done: false
-            }
-          ]
+          text: "Grade self-assessment",
+          complete: false
         },
         {
-          tech: 'Angular Day 2',
-          project: 'Shortly Day 2',
-          description: 'Dr. Yap, once I was into you, but after seeing you torture my father, I think we should just be friends with dental benefits. I don\'t know. Eating lobster?',
-          tasks: [
-            {
-              text: 'Read the docs',
-              done: false
-            },
-            {
-              text: 'Read the docs',
-              done: false
-            },
-            {
-              text: 'Basic requirements',
-              done: false
-            },
-            {
-              text: 'Watch the solution video',
-              done: false
-            },
-            {
-              text: 'Refactor your code',
-              done: false
-            }
-          ]
-        }
-      ]
-    }, 
-    {
-      day: 3, 
-      lessons: [
-        {
-          tech: 'Heroku',
-          project: 'Shortly...Again',
-          description: 'If you need me, I\'ll be down here on the floor. Dying. I\'ve been using the toilet like an idiot.'
+          text: "Review questions from last week",
+          complete: false
         },
         {
-          tech: 'Heroku',
-          project: 'Shortly...Again',
-          description: 'Dear God, this is Tina from school. Hey Jimmy Jr. Did you see those two squirrels fighting in the courtyard? I can\'t tell where your back ends and your butt begins.'
-        }
+          text: "Introduction to Stoichiometry",
+          complete: false
+        }   
+      ],
+      assignments: [
+        {
+            text: "Page 333: #1-25 odds",
+            complete: false
+          },
+          {
+            text: "Submit questions for review",
+            complete: false
+          },
+          {
+            text: "Read over lab procedure for Wednesday",
+            complete: false
+          } 
       ]
     },
     {
-      day: 5, 
-      lessons: [
-        {
-          tech: 'Authentication',
-          project: 'Shortly...Last time I swear',
-          description: 'You\'re right. I\'m a firestarter and a jinx. I\'m going to destroy this whole family. Just when I think I\'m out, those cheeks pull me right back in. There is one place I like to go.'
+      dayNumber: 2,
+      dailyGoal: 'Converting mass to moles and back again (an atom\'s tale)',
+      tasks: [{
+          text: "Check homework",
+          complete: false
         },
         {
-          tech: 'Authentication',
-          project: 'Shortly...Last time I swear',
-          description: 'The boys\' locker room. You can only see up to their ankles. Not if you\'re a fish. Time for the charm bomb to explode. Explore the morgue?'
-        }
-      ]
+          text: "Answer questions from homework",
+          complete: false
+        },
+        {
+          text: "Converting between Mass and Moles",
+          complete: false
+        }],
+      assignments: [{
+            text: "Page 333: #27-35 odds",
+            complete: false
+          },
+          {
+            text: "Submit questions for review",
+            complete: false
+          },
+          {
+            text: "Complete prelab assignment",
+            complete: false
+          },
+          {
+            text: "Bring proper lab attire",
+            complete: false
+          }]
+    },
+    {
+      dayNumber: 3,
+      dailyGoal: 'Stoichiometry Lab: Moles in Chalk',
+      tasks: [{
+          text: "Check prelab and attire",
+          complete: false
+        },
+        {
+          text: "Conduct the experiment",
+          complete: false
+        }],
+      assignments: [{
+            text: "Page 333: #27-35 odds",
+            complete: false
+          },
+          {
+            text: "Submit questions for review",
+            complete: false
+          },
+          {
+            text: "Complete lab write-up for Friday",
+            complete: false
+          }]
+    },
+    {
+      dayNumber: 4,
+      dailyGoal: 'Converting between Moles and Molecules',
+      tasks: [{
+          text: "Check homework",
+          complete: false
+        },
+        {
+          text: "Answer questions from homework",
+          complete: false
+        },
+        {
+          text: "Converting between Moles and Molecules",
+          complete: false
+        }],
+      assignments: [{
+            text: "Page 334: #45 - 65 odds",
+            complete: false
+          },
+          {
+            text: "Submit questions for review",
+            complete: false
+          },
+          {
+            text: "Complete lab write-up for Friday",
+            complete: false
+          }]
+    },
+    {
+      dayNumber: 5,
+      dailyGoal: 'Converting between Mass and Molecules',
+      tasks: [{
+          text: "Check homework",
+          complete: false
+        },
+        {
+          text: "Answer questions from homework",
+          complete: false
+        },
+        {
+          text: "Converting between Mass and Molecules",
+          complete: false
+        }],
+      assignments: [{
+            text: "Page 334: #67 - 81 odds",
+            complete: false
+          },
+          {
+            text: "Read section 10.5: Limiting and Excess Reactants",
+            complete: false
+          },
+          {
+            text: "Submit questions for review",
+            complete: false
+          },
+          {
+            text: "Quiz on Monday: Converting between Mass and Molecules (and Everything in Between)",
+            complete: false
+          }]
     }
-    ] 
-  };
-}])
+  
+  ]
+}

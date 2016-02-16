@@ -7,6 +7,12 @@
     <h1> CurricSched </h1>
       <h6> Pronounced Just As You Think </h6>
         <div ng-controller="StudentController">
+        <select ng-model="selected">
+          <option value='1'> Days 1 - 2</option>
+          <option value='3'>Days 3 - 4</option>
+          <option value='5'>Days 5 - 6</option>
+        </select>
+                
         <ul>
           <li>Day 1</li>
           <li>Day 3</li>
@@ -14,9 +20,9 @@
         </ul>
         
         <h2> This Week </h2>
-        <p> {{ goal }} </p>
+        <p> {{ week.goal }} </p>
         
-        <div ng-repeat='day in week.sprints | filter: {day : "3"}'>
+        <div ng-repeat='day in week.sprints | filter: {day : selected.value}'>
           <h3> Day# {{ day.day}} </h3>
           <div ng-repeat='lesson in day.lessons'>
             <h4> Tech: {{ lesson.tech }} </h4>
