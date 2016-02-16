@@ -16,7 +16,7 @@
         <h2> This Week </h2>
         <p> {{ goal }} </p>
         
-        <div ng-repeat='day in week.sprints'>
+        <div ng-repeat='day in week.sprints | filter: {day : "3"}'>
           <h3> Day# {{ day.day}} </h3>
           <div ng-repeat='lesson in day.lessons'>
             <h4> Tech: {{ lesson.tech }} </h4>
