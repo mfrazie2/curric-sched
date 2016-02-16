@@ -7,32 +7,24 @@
     <h1> CurricSched </h1>
       <h6> Pronounced Just As You Think </h6>
         <div ng-controller="StudentController">
-        <select ng-model="selected">
-          <option value='1'> Days 1 - 2</option>
-          <option value='3'>Days 3 - 4</option>
-          <option value='5'>Days 5 - 6</option>
+        <select ng-model="selectedDay">
+          <option value="1"> Monday </option>
+          <option value="2"> Tuesday </option>
+          <option value="3"> Wednesday </option>
+          <option value="4"> Thursday </option>
+          <option value="5"> Friday </option>
         </select>
-                
-        <ul>
-          <li>Day 1</li>
-          <li>Day 3</li>
-          <li>Day 5</li>
-        </ul>
         
-        <h2> This Week </h2>
-        <p> {{ week.goal }} </p>
+        <h2> Week: #{{ week.value }} </h2>
+        <p> {{ week.weeklyGoal }} </p>
         
-        <div ng-repeat='day in week.sprints | filter: {day : selected.value}'>
-          <h3> Day# {{ day.day}} </h3>
-          <div ng-repeat='lesson in day.lessons'>
-            <h4> Tech: {{ lesson.tech }} </h4>
-            <p> Project: {{ lesson.project }} </p>
-            <p> Description </p>
-            <p> {{ lesson.description }} </p>
-            
-            <h3> Your Tasks </h3>
+        <div ng-repeat='day in week.days | filter: {dayNumber: selectedDay}'>
+          <h3> Day# {{ day.dayNumber }} </h3>
+          <h3> Today: {{ day.dailyGoal }} </h3>
+          
+          <h3> Tasks </h3>
           <ul>  
-          <div ng-repeat='task in lesson.tasks'>
+          <div ng-repeat='task in day.tasks'>
             <li>
               <input type='checkbox' ng-model='task.done'/>
               <span>{{ task.text }}</span>
@@ -40,9 +32,17 @@
           </div>
           </ul>
           
+          <h3> Assignments </h3>
+          <ul>  
+          <div ng-repeat='assignment in day.assignments'>
+            <li>
+              <input type='checkbox' ng-model='task.done'/>
+              <span>{{ assignment.text }}</span>
+            </li>
+          </div>
+          </ul>
           
           </div>
-        </div>
         </div>
         <script src="app/app.js"></script>
 
