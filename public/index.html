@@ -2,10 +2,15 @@
 <html >
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+<link href='styles.css' rel='stylesheet'>
 </head>
   <body ng-app="curric-sched">
     <h1> CurricSched </h1>
-      <h6> Pronounced Just As You Think </h6>
+      <p> Pronounced Just As You Think </p>
+      
+        
+          
+          
         <div ng-controller="StudentController">
         <select ng-model="selectedDay">
           <option value="1"> Monday </option>
@@ -17,6 +22,16 @@
         
         <h2> Week: #{{ week.value }} </h2>
         <p> {{ week.weeklyGoal }} </p>
+        
+        <div ng-controller='ModalController'>
+          <button ng-click='toggleModal()'> Ask a Question </button>
+          <modal-question show='modalShown' width='250px' height='100px'>
+            <p> You Got a Question? </p>
+            <input type='text' ng-model='question'>
+          </modal-question>
+        </div>
+        
+        
         
         <div ng-repeat='day in week.days | filter: {dayNumber: selectedDay}'>
           <h3> Day# {{ day.dayNumber }} </h3>
