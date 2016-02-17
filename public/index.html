@@ -5,12 +5,9 @@
 <link href='styles.css' rel='stylesheet'>
 </head>
   <body ng-app="curric-sched">
-    <h1> CurricSched </h1>
+    <h2> CurricSched </h2>
       <p> Pronounced Just As You Think </p>
-      
-        
-          
-          
+
         <div ng-controller="StudentController">
         <select ng-model="selectedDay">
           <option value="1"> Monday </option>
@@ -20,25 +17,29 @@
           <option value="5"> Friday </option>
         </select>
         
-        <h2> Week: #{{ week.value }} </h2>
+        <h2> Week: {{ week.value }} </h2>
         <p> {{ week.weeklyGoal }} </p>
         
-        <div ng-controller='ModalController'>
-          <button ng-click='toggleModal()'> Ask a Question </button>
+        <div ng-controller='ModalController' id='modal-button'>
+          <div ng-click='toggleModal()'> Ask a Question </div>
           <modal-question show='modalShown' width='250px' height='100px'>
             <p> You Got a Question? </p>
-            <input type='text' ng-model='question'>
+            <form name='questionForm'>
+              <input type='text' name='question' ng-model='questionField.question' placeholder='Ask a question'>
+              <button ng-click="submitQuestion(questionField.question)"> Submit </button> 
+            </form>
           </modal-question>
         </div>
         
         
         
         <div ng-repeat='day in week.days | filter: {dayNumber: selectedDay}'>
-          <h3> Day# {{ day.dayNumber }} </h3>
-          <h3> Today: {{ day.dailyGoal }} </h3>
+          <h3> Day {{ day.dayNumber }} </h3>
+          <h3> Today's Goal: {{ day.dailyGoal }} </h3>
+          <p> {{ day.description }} </p>
           
           <h3> Tasks </h3>
-          <ul>  
+          <ul class='tasks'>  
           <div ng-repeat='task in day.tasks'>
             <li>
               <input type='checkbox' ng-model='task.done'/>
@@ -48,7 +49,7 @@
           </ul>
           
           <h3> Assignments </h3>
-          <ul>  
+          <ul class='assignments'>  
           <div ng-repeat='assignment in day.assignments'>
             <li>
               <input type='checkbox' ng-model='task.done'/>
