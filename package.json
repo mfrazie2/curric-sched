@@ -1,0 +1,27 @@
+{
+  "name": "curric-sched",
+  "version": "1.0.0",
+  "description": "student view-- curriculum scheduler",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies" : {
+    "express": "~3.4.8"
+    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfrazie2/curric-sched.git"
+  },
+  "keywords": [
+    "MVP",
+    "angular"
+  ],
+  "author": "Mike Frazier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mfrazie2/curric-sched/issues"
+  },
+  "homepage": "https://github.com/mfrazie2/curric-sched#readme"
+}
